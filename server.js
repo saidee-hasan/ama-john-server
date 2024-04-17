@@ -11,7 +11,7 @@ console.log(process.env.DB_USER);
 const { MongoClient } = require("mongodb");
 
 // Replace the uri string with your connection string.
-const uri = `mongodb+srv://:ST72A9Brh3ZPqfOs@amajohnstore.lb8x71w.mongodb.net/?retryWrites=true&w=majority&appName=amaJohnStore`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@amajohnstore.lb8x71w.mongodb.net/?retryWrites=true&w=majority&appName=amaJohnStore`;
 
 const client = new MongoClient(uri);
 
