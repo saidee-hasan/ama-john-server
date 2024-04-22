@@ -43,13 +43,7 @@ async function run() {
       const documents = await data.toArray();
       res.send(documents);
     });
-    app.post("/addOrder", async (req, res) => {
-      const order = req.body;
-      await ordersCollection.insertOne(order)
-      .then((result) => {
-        res.send(result.insertedCount);
-      });
-    });
+   
     console.log("db is connected");
   } finally {
     // Ensures that the client will close when you finish/error
